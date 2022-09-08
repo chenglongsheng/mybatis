@@ -10,7 +10,7 @@
     <delete id="deleteUser">
         DELETE
         FROM t_user
-        WHERE id = 1
+        WHERE id = #{id}
     </delete>
     <update id="updateUser">
         UPDATE t_user
@@ -21,9 +21,17 @@
     <select id="getUserById" resultType="cn.cls.mybatis.pojo.User">
         SELECT *
         FROM t_user
-        WHERE id = 3
+        WHERE id = #{id}
     </select>
     <select id="getUserList" resultType="cn.cls.mybatis.pojo.User">
+        SELECT *
+        FROM t_user
+    </select>
+    <select id="getCount" resultType="java.lang.Integer">
+        SELECT COUNT(id)
+        FROM t_user
+    </select>
+    <select id="getAllUserToMap" resultType="map">
         SELECT *
         FROM t_user
     </select>
