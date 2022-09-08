@@ -7,4 +7,24 @@
         INSERT INTO t_user
         VALUES (null, 'admin', '123456', 34, '男', '123456@qq.com')
     </insert>
+    <delete id="deleteUser">
+        DELETE
+        FROM t_user
+        WHERE id = 1
+    </delete>
+    <update id="updateUser">
+        UPDATE t_user
+        SET username='张三',
+            password='123'
+        WHERE id = 2
+    </update>
+    <select id="getUserById" resultType="cn.cls.mybatis.pojo.User">
+        SELECT *
+        FROM t_user
+        WHERE id = 3
+    </select>
+    <select id="getUserList" resultType="cn.cls.mybatis.pojo.User">
+        SELECT *
+        FROM t_user
+    </select>
 </mapper>
